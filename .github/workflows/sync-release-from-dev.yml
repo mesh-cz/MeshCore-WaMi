@@ -1,0 +1,53 @@
+name: Sync Repeater Release from Dev
+
+# Downloads the latest (non-draft, non-prerelease) release assets from the
+# wamidev/MeshCore-WaMi-dev development repo and publishes them here as a new
+# draft release. The source release in the dev repo is only read, never
+# modified or deleted.
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      dev_tag:
+        description: "Specific dev repo release tag to sync (leave empty to use the latest non-draft release)"
+        required: false
+        type: string
+
+jobs:
+  sync-release:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Determine release tag and download assets from dev repo
+        env:
+          GH_TOKEN: ${{ secrets.WAMIDEV_READ_TOKEN }}
+        run: |
+          if [ -n "${{ inputs.dev_tag }}" ]; then
+            TAG="${{ inputs.dev_tag }}"
+          else
+            TAG=$(gh release list --repo wamidev/MeshCore-WaMi-dev --exclude-drafts --exclude-pre-releases --limit 1 --json tagName --jq '.[0].tagName')
+          fi
+
+          if [ -z "$TAG" ]; then
+            echo "Could not determine a release tag to sync" >&2
+            exit 1
+          fi
+
+          echo "Syncing release: $TAG"
+          echo "SYNC_TAG=$TAG" >> "$GITHUB_ENV"
+
+          mkdir -p assets
+          gh release download "$TAG" --repo wamidev/MeshCore-WaMi-dev --dir assets
+
+      - name: Publish as a new draft release here
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$SYNC_TAG" assets/* \
+            --repo ${{ github.repository }} \
+            --title "Repeater Firmware $SYNC_TAG" \
+            --notes "Repeater firmware build. See [README.md](https://github.com/${{ github.repository }}#readme) for what's included in this fork." \
+            --draft
