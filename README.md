@@ -171,6 +171,8 @@ Firmware tedy není nutné kompilovat ručně ze zdrojových kódů.
 
 Tento projekt je **komunitní fork** MeshCore a **není oficiální součástí** projektu MeshCore.
 
+Po důkladném otestování plánujeme tyto úpravy nabídnout formou Pull Requestu oficiálnímu projektu MeshCore ke schválení. Je tedy možné, že se v budoucnu stanou součástí oficiálního firmware.
+
 Úpravy jsou zaměřeny především na zvýšení odolnosti repeaterů provozovaných nepřetržitě nebo na obtížně dostupných místech.
 
 Automatický restart je **poslední záchranný mechanismus**. Nenahrazuje:
@@ -371,6 +373,8 @@ Users therefore do not need to compile the firmware manually from source code.
 ## ⚠️ Important Notice
 
 This project is a **community-maintained fork** of MeshCore and is **not an official part** of the MeshCore project.
+
+Once these changes have been thoroughly tested, we plan to submit them as a Pull Request to the official MeshCore project for review. They may therefore become part of the official firmware in the future.
 
 The modifications are primarily intended to improve the resilience of repeaters operating continuously or installed in difficult-to-access locations.
 
