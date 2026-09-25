@@ -82,6 +82,7 @@ Firmware přidává následující CLI příkazy:
 
 | Příkaz | Popis |
 |---|---|
+| `get radio.silence` | Stav Radio Silence Watchdog. |
 | `set radio.silence on` | Zapne Radio Silence Watchdog. |
 | `set radio.silence off` | Vypne Radio Silence Watchdog. |
 | `set radio.silence.time <1-240>` | Nastaví maximální dobu bez přijetí skutečného rádiového paketu, po jejímž překročení dojde k automatickému restartu repeateru. Hodnota je v minutách. |
@@ -283,6 +284,7 @@ The firmware adds the following CLI commands:
 
 | Command | Description |
 |---|---|
+| `get radio.silence` | Status of the Radio Silence Watchdog. |
 | `set radio.silence on` | Enables the Radio Silence Watchdog. |
 | `set radio.silence off` | Disables the Radio Silence Watchdog. |
 | `set radio.silence.time <1-240>` | Sets the maximum period without receiving a valid radio packet before the repeater is automatically restarted. The value is specified in minutes. |
