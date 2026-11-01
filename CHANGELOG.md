@@ -8,7 +8,9 @@ Značení verzí: **verze MeshCore + dvoumístná podverze tohoto forku**, např
 
 ---
 
-## v1.18.0.01 – (připravuje se)
+## v1.18.0.01 – 1. 11. 2026
+
+[Release](../../releases/tag/repeater-v1.18.0.01)
 
 **Novinky**
 - **PowerSaving 18** od [IoTThinks](https://github.com/IoTThinks/EasySkyMesh) – výrazně nižší odběr repeateru. Ve výchozím stavu **zapnutý**, vypnutí: `powersaving off`.
@@ -55,7 +57,9 @@ Version scheme: **MeshCore version + a two-digit sub-version of this fork**, e.g
 
 ---
 
-## v1.18.0.01 – (upcoming)
+## v1.18.0.01 – 2026-11-01
+
+[Release](../../releases/tag/repeater-v1.18.0.01)
 
 **New**
 - **PowerSaving 18** by [IoTThinks](https://github.com/IoTThinks/EasySkyMesh) – significantly lower repeater power draw. **Enabled** by default; disable with `powersaving off`.
