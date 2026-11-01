@@ -7,7 +7,8 @@
 > **Self-recovery:** Ano  
 > **Radio Silence Watchdog:** Volitelný, ve výchozím stavu vypnutý  
 > **Výchozí timeout:** 60 minut  
-> **Identifikace buildu:** `-meshcz`
+> **Identifikace buildu:** `-meshcz`  
+> **PowerSaving:** PowerSaving 18 (IoTThinks), ve výchozím stavu zapnutý
 
 MeshCore-WaMi je komunitní fork projektu [MeshCore](https://github.com/meshcore-dev/MeshCore), zaměřený především na zvýšení spolehlivosti repeaterů, zejména při dlouhodobém bezobslužném provozu.
 
@@ -73,6 +74,25 @@ To umožňuje zotavení repeateru z některých stavů zaseknutí rádia bez nut
 Firmware ukládá počet restartů vyvolaných Radio Silence Watchdogem.
 
 Tento čítač zůstává zachován i po běžném restartu zařízení, takže je možné zjistit, zda se repeater již automaticky zotavoval a kolikrát k tomu došlo.
+
+### 4. PowerSaving 18 (úspora energie)
+
+Firmware obsahuje **PowerSaving 18** od [IoTThinks](https://github.com/IoTThinks/EasySkyMesh) (licence MIT), postavený na stejné verzi MeshCore 1.18. Výrazně snižuje odběr repeateru, což se hodí hlavně pro solárně a bateriově napájené instalace.
+
+PowerSaving je **ve výchozím stavu zapnutý**. Hlavní příkazy:
+
+| Příkaz | Popis |
+|---|---|
+| `powersaving on` / `powersaving off` | Zapne / vypne úsporný režim. |
+| `set radio.rxps balanced` / `set radio.rxps off` | Úsporný příjem rádia (RX duty-cycle) / vypnutí. |
+| `get radio.rxps` | Zobrazí nastavení úsporného příjmu. |
+| `set reboot.interval <hodiny>` | Pravidelný restart každých N hodin (0 = vypnuto). |
+
+Radio Silence Watchdog funguje i se zapnutým PowerSaving — sleduje jen skutečně přijaté a odeslané pakety. Do čítače `get radio.reboots` se pravidelné restarty z `reboot.interval` nepočítají.
+
+> **Známý problém:** u T-Echo jsou hlášené potíže s příjmem — řešení: `set radio.rxps off`.
+
+Podrobnosti: [PowerSaving Wiki](https://github.com/IoTThinks/EasySkyMesh/wiki/PowerSaving).
 
 ---
 
@@ -140,10 +160,18 @@ Pomáhá tak i v situacích, kdy rádio zůstane zaseknuté po problému s napá
 
 ## 🏷️ Identifikace firmware
 
-Buildy vytvořené z tohoto forku používají vlastní příponu verze:
+Verze má tvar **verze MeshCore + dvoumístná podverze tohoto forku**, například `v1.18.0.01` = MeshCore 1.18.0, naše první vydání na ní. Další vydání na stejné verzi MeshCore bude `.02`, `.03`…
+
+Příkaz `ver` na zařízení zobrazí:
 
 ```text
-v1.17.1-meshcz-<commit>
+v1.18.0.01-meshcz-<commit>
+```
+
+Soubory firmware mají stejné označení, např.:
+
+```text
+GAT562_Mesh_Tracker_Pro_repeater-meshcz-v1.18.0.01-a95a.zip
 ```
 
 Aktuální verzi firmware lze zobrazit příkazem:
@@ -209,7 +237,8 @@ Copyright (c) 2025 Scott Powell / rippleradios.com
 > **Self-recovery:** Yes  
 > **Radio Silence Watchdog:** Optional, disabled by default  
 > **Default timeout:** 60 minutes  
-> **Build identifier:** `-meshcz`
+> **Build identifier:** `-meshcz`  
+> **PowerSaving:** PowerSaving 18 (IoTThinks), enabled by default
 
 MeshCore-WaMi is a community fork of [MeshCore](https://github.com/meshcore-dev/MeshCore), focused primarily on improving repeater reliability, especially in long-term unattended deployments.
 
@@ -275,6 +304,25 @@ This allows the repeater to recover from certain radio lock-up conditions withou
 The firmware stores the number of restarts triggered by the Radio Silence Watchdog.
 
 The counter remains available after a normal device restart, making it possible to determine whether the repeater has already recovered automatically and how many recovery events have occurred.
+
+### 4. PowerSaving 18 (lower power consumption)
+
+The firmware includes **PowerSaving 18** by [IoTThinks](https://github.com/IoTThinks/EasySkyMesh) (MIT licensed), built on the same MeshCore 1.18 release. It significantly reduces repeater power draw, which matters most for solar- and battery-powered installations.
+
+PowerSaving is **enabled by default**. Main commands:
+
+| Command | Description |
+|---|---|
+| `powersaving on` / `powersaving off` | Enables / disables power saving. |
+| `set radio.rxps balanced` / `set radio.rxps off` | Power-saving radio receive (RX duty-cycle) / off. |
+| `get radio.rxps` | Shows the receive power-saving settings. |
+| `set reboot.interval <hours>` | Periodic reboot every N hours (0 = off). |
+
+The Radio Silence Watchdog keeps working with PowerSaving enabled — it only tracks packets actually received and sent. Scheduled `reboot.interval` reboots are not counted in `get radio.reboots`.
+
+> **Known issue:** T-Echo boards have reported receive problems — workaround: `set radio.rxps off`.
+
+Details: [PowerSaving Wiki](https://github.com/IoTThinks/EasySkyMesh/wiki/PowerSaving).
 
 ---
 
@@ -342,10 +390,18 @@ This also helps in situations where the radio remains stuck after a power-relate
 
 ## 🏷️ Firmware Identification
 
-Builds produced from this fork use a custom version suffix:
+The version is **the MeshCore version plus a two-digit sub-version of this fork**, e.g. `v1.18.0.01` = MeshCore 1.18.0, our first release on top of it. Further releases on the same MeshCore version become `.02`, `.03`…
+
+The `ver` command on the device shows:
 
 ```text
-v1.17.1-meshcz-<commit>
+v1.18.0.01-meshcz-<commit>
+```
+
+Firmware files carry the same label, e.g.:
+
+```text
+GAT562_Mesh_Tracker_Pro_repeater-meshcz-v1.18.0.01-a95a.zip
 ```
 
 The currently running firmware version can be displayed using:
