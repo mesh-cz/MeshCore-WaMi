@@ -1,6 +1,6 @@
 # MeshCore-WaMi
 
-🇬🇧 [English version below](#english-version)
+🇬🇧 [English version below](#english-version) · 📝 [Přehled změn ve verzích (CHANGELOG)](CHANGELOG.md)
 
 > **Upstream:** [MeshCore](https://github.com/meshcore-dev/MeshCore)  
 > **Zaměření:** Repeater firmware / zvýšení provozní spolehlivosti  
@@ -194,6 +194,8 @@ Předpřipravené firmware buildy jsou publikovány v sekci:
 
 Firmware tedy není nutné kompilovat ručně ze zdrojových kódů.
 
+Co se změnilo v jednotlivých verzích, najdeš v [CHANGELOG.md](CHANGELOG.md).
+
 ---
 
 ## ⚠️ Upozornění
@@ -230,7 +232,7 @@ Copyright (c) 2025 Scott Powell / rippleradios.com
 
 # English version
 
-🇨🇿 [Czech version above](#meshcore-wami)
+🇨🇿 [Czech version above](#meshcore-wami) · 📝 [Changes per version (CHANGELOG)](CHANGELOG.md#english-version)
 
 > **Upstream:** [MeshCore](https://github.com/meshcore-dev/MeshCore)  
 > **Focus:** Repeater firmware / improved operational reliability  
@@ -425,6 +427,8 @@ Pre-built firmware images are published in the:
 section of this repository.
 
 Users therefore do not need to compile the firmware manually from source code.
+
+See [CHANGELOG.md](CHANGELOG.md#english-version) for what changed in each version.
 
 ---
 
