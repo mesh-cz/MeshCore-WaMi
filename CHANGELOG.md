@@ -24,7 +24,6 @@ Značení verzí: **verze MeshCore + dvoumístná podverze tohoto forku**, např
 
 **Známé problémy**
 - T-Echo: hlášené potíže s příjmem – řešení `set radio.rxps off`.
-- ThinkNode M8: firmware v tomto vydání chybí (chyba sestavení této desky v oficiálním MeshCore 1.18.0, chyběl už ve v1.18.0).
 
 ## v1.18.0 – 15. 10. 2026
 
@@ -73,7 +72,6 @@ Version scheme: **MeshCore version + a two-digit sub-version of this fork**, e.g
 
 **Known issues**
 - T-Echo: reported receive problems – workaround `set radio.rxps off`.
-- ThinkNode M8: no firmware in this release (build error for this board in official MeshCore 1.18.0; also missing from v1.18.0).
 
 ## v1.18.0 – 2026-10-15
 
