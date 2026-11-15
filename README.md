@@ -2,6 +2,17 @@
 
 🇬🇧 [English version below](#english-version) · 📝 [Přehled změn ve verzích (CHANGELOG)](CHANGELOG.md)
 
+> [!IMPORTANT]
+> ## 🚚 Projekt pokračuje jako MeshCore Czech
+> Další vývoj probíhá v repozitáři
+> **[MeshCore Czech](https://github.com/mesh-cz/MeshCore-Czech)**. Zahrnuje
+> všechno odsud (Radio Silence Watchdog, PowerSaving) a přidává **CzHealth**
+> (stav repeateru na dálku) a **CzGuard** (ochrana sítě před zahlcením).
+>
+> **👉 [Aktuální firmware ke stažení](https://github.com/mesh-cz/MeshCore-Czech/releases)**
+>
+> Tento repozitář zůstává jako archiv starších vydání.
+
 > **Upstream:** [MeshCore](https://github.com/meshcore-dev/MeshCore)  
 > **Zaměření:** Repeater firmware / zvýšení provozní spolehlivosti  
 > **Self-recovery:** Ano  
@@ -233,6 +244,18 @@ Copyright (c) 2025 Scott Powell / rippleradios.com
 # English version
 
 🇨🇿 [Czech version above](#meshcore-wami) · 📝 [Changes per version (CHANGELOG)](CHANGELOG.md#english-version)
+
+> [!IMPORTANT]
+> ## 🚚 This project continues as MeshCore Czech
+> Further development takes place in
+> **[MeshCore Czech](https://github.com/mesh-cz/MeshCore-Czech)**. It includes
+> everything from here (Radio Silence Watchdog, PowerSaving) and adds
+> **CzHealth** (remote repeater status) and **CzGuard** (network flood
+> protection).
+>
+> **👉 [Download current firmware](https://github.com/mesh-cz/MeshCore-Czech/releases)**
+>
+> This repository is kept as an archive of older releases.
 
 > **Upstream:** [MeshCore](https://github.com/meshcore-dev/MeshCore)  
 > **Focus:** Repeater firmware / improved operational reliability  

@@ -2,6 +2,10 @@
 
 🇬🇧 [English version below](#english-version)
 
+> [!IMPORTANT]
+> Další vývoj probíhá v **[MeshCore Czech](https://github.com/mesh-cz/MeshCore-Czech)**.
+> Novější vydání a jejich změny najdete tam: [CHANGELOG](https://github.com/mesh-cz/MeshCore-Czech/blob/main/CHANGELOG.md).
+
 Přehled změn v jednotlivých vydáních firmware MeshCore-WaMi. Firmware ke stažení je v sekci [Releases](../../releases).
 
 Značení verzí: **verze MeshCore + dvoumístná podverze tohoto forku**, např. `v1.18.0.01` = MeshCore 1.18.0, naše první vydání na ní.
@@ -49,6 +53,10 @@ První vydání MeshCore-WaMi, postavené na MeshCore v1.17.1.
 # English version
 
 🇨🇿 [Czech version above](#changelog--meshcore-wami)
+
+> [!IMPORTANT]
+> Further development takes place in **[MeshCore Czech](https://github.com/mesh-cz/MeshCore-Czech)**.
+> Newer releases and their changes are there: [CHANGELOG](https://github.com/mesh-cz/MeshCore-Czech/blob/main/CHANGELOG.md).
 
 Changes in each MeshCore-WaMi firmware release. Firmware downloads are in [Releases](../../releases).
 
